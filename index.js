@@ -26,7 +26,22 @@ function getData() {
   return loadData(file);
 }
 
+const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+const CLASS_TYPES = { Lecture: 'Лекція', Practical: 'Практична' };
 
+function getAllClasses(data) {
+  return data.schedule.flatMap((d) =>
+    d.classes.map((c) => ({ ...c, day: d.day }))
+  );
+}
+
+function formatClass(c) {
+  const teachers = c.teacher ? c.teacher.map((t) => t.trim()).join(', ') : 'не вказано';
+  const room = c.isOnline ? 'онлайн' : c.classroom;
+  const sub = c.subgroup ? `, підгрупа ${c.subgroup}` : '';
+  const type = CLASS_TYPES[c.classType] ?? c.classType;
+  return `${c.lessonNumber}. ${c.time} | ${c.name} (${type}) | ${teachers} | ${room}${sub}`;
+}
 
 const program = new Command();
 program
@@ -35,6 +50,58 @@ program
   .version('1.0.0', '-v, --version', 'показати версію програми')
   .option('-f, --file <path>', 'шлях до JSON-файлу з розкладом', 'schedule.json')
   .helpOption('-h, --help', 'показати довідку');
+
+
+
+program
+  .command('day <day>')
+  .description('Показати заняття за обраний день тижня')
+  .option('-s, --subgroup <n>', 'показати лише заняття вказаної підгрупи (та спільні)')
+  .action((dayArg, options) => {
+    const day = DAYS.find((d) => d.toLowerCase() === dayArg.toLowerCase());
+    if (!day) {
+      fail(`невідомий день "${dayArg}". Допустимі: ${DAYS.join(', ')}.`);
+    }
+
+    let subgroup = null;
+    if (options.subgroup !== undefined) {
+      subgroup = Number(options.subgroup);
+      if (!Number.isInteger(subgroup) || subgroup < 1) {
+        fail(`підгрупа має бути додатним цілим числом, отримано "${options.subgroup}".`);
+      }
+    }
+
+    const result = getAllClasses(getData())
+      .filter((c) => c.day === day)
+      .filter((c) => subgroup === null || c.subgroup === null || c.subgroup === subgroup)
+      .sort((a, b) => a.lessonNumber - b.lessonNumber);
+
+    if (result.length === 0) {
+      console.log(`На ${day} занять не знайдено.`);
+      return;
+    }
+    result.forEach((c) => console.log(formatClass(c)));
+  });
+
+
+program
+  .command('teacher <name>')
+  .description('Показати заняття викладача (за частиною прізвища чи імені)')
+  .option('-r, --remote', 'показати лише дистанційні заняття')
+  .action((name, options) => {
+    const query = name.trim().toLowerCase();
+
+    const result = getAllClasses(getData())
+      .filter((c) => c.teacher !== null && c.teacher.some((t) => t.trim().toLowerCase().includes(query)))
+      .filter((c) => !options.remote || c.isOnline);
+
+    if (result.length === 0) {
+      console.log(`Занять викладача "${name}" не знайдено.`);
+      return;
+    }
+    result.forEach((c) => console.log(`${c.day}: ${formatClass(c)}`));
+  });
+
 
 
 program.parse();
