@@ -167,6 +167,23 @@ program
     console.log(JSON.stringify(c, null, 2));
   });
 
+  
+program
+  .command('field <n> <path>')
+  .description('Показати значення поля заняття за шляхом, напр. teacher.0 або classroom')
+  .action((n, path) => {
+    const c = getClassByNumber(getData(), n);
+
+    let value = c;
+    for (const key of path.split('.')) {
+      if (value === null || typeof value !== 'object' || !Object.hasOwn(value, key)) {
+        fail(`поля "${path}" у занятті №${n} не існує.`);
+      }
+      value = value[key];
+    }
+
+    console.log(typeof value === 'object' && value !== null ? JSON.stringify(value, null, 2) : String(value));
+  });
 
 
 
