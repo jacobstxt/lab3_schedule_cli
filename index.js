@@ -103,5 +103,26 @@ program
   });
 
 
+program
+  .command('week <type>')
+  .description('Показати розклад для чисельника (odd) або знаменника (even) разом зі щотижневими заняттями')
+  .action((type) => {
+    const map = { odd: 'Odd', even: 'Even' };
+    const weekType = map[type.toLowerCase()];
+    if (!weekType) {
+      fail(`невідомий тип тижня "${type}". Допустимі: odd (чисельник), even (знаменник).`);
+    }
+
+    for (const d of getData().schedule) {
+      const list = d.classes
+        .filter((c) => c.weekType === weekType || c.weekType === 'Weekly')
+        .sort((a, b) => a.lessonNumber - b.lessonNumber);
+      console.log(`\n${d.day}:`);
+      if (list.length === 0) console.log('  занять немає');
+      list.forEach((c) => console.log(`  ${formatClass(c)}`));
+    }
+  });
+
+
 
 program.parse();
