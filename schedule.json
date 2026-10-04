@@ -1,0 +1,250 @@
+{
+  "groupName": "FEI-21s",
+  "schedule": [
+    {
+      "day": "Monday",
+      "classes": [
+        {
+          "lessonNumber": 2,
+          "subgroup": 1,
+          "name": "Organization of Databases and Knowledge",
+          "teacher": ["Tsybuliak Bohdan Zinoviiovych"],
+          "classType": "Practical",
+          "classroom": "8/B",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "10:10 AM - 11:30 AM"
+        },
+        {
+          "lessonNumber": 3,
+          "subgroup": null,
+          "name": "Foreign Language",
+          "teacher": ["Dovbenko Larysa Vasylivna ", "Shandra Nataliia Andriivna ", "Shumska Olha Anatoliivna"],
+          "classType": "Practical",
+          "classroom": "129a/T, 406/T, 4/B",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "11:50 AM - 1:10 PM"
+        },
+        {      
+          "lessonNumber": 4,
+          "subgroup": null,
+          "name": "Optoelectronic Informatics",
+          "teacher": ["Korchak Yurii Mykhailovych"],
+          "classType": "Lecture",
+          "classroom": "1/B",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "1:30 PM - 2:50 PM"
+        },
+        {
+          "lessonNumber": 5,
+          "subgroup": 1,
+          "name": "Server-Side Web Programming",
+          "teacher": ["Husak Oleh Vasylovych"],
+          "classType": "Practical",
+          "classroom": "14/B",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "3:05 PM - 4:25 PM"
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "classes": [
+        {
+          "lessonNumber": 1,
+          "subgroup": null,
+          "name": "Fundamentals of National Resistance",
+          "teacher": null,
+          "classType": "Lecture",
+          "classroom": "1/B",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "8:30 AM - 9:50 AM"
+        },
+        {
+          "lessonNumber": 2,
+          "subgroup": null,
+          "name": "Foreign Language",
+          "teacher": ["Dovbenko Larysa Vasylivna ", "Shandra Nataliia Andriivna ", "Shumska Olha Anatoliivna"],
+          "classType": "Practical",
+          "classroom": "129a/T, 406/T, 5/B",
+          "isOnline": false,
+          "weekType": "Odd",
+          "time": "10:10 AM - 11:30 AM"
+        },
+        {
+          "lessonNumber": 3,
+          "subgroup": null,
+          "name": "Data Visualization",
+          "teacher": ["Marets Oksana Romanivna"],
+          "classType": "Practical",
+          "classroom": "Ч332",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "11:50 AM - 1:10 PM"
+        },
+        {
+          "lessonNumber": 4,
+          "subgroup": 1,
+          "name": "Data Visualization",
+          "teacher": ["Marets Oksana Romanivna"],
+          "classType": "Practical",
+          "classroom": null,
+          "isOnline": true,
+          "weekType": "Weekly",
+          "time": "1:30 PM - 2:50 PM"
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "classes": [
+        {
+          "lessonNumber": 1,
+          "subgroup": 1,
+          "name": "Operating Systems",
+          "teacher": ["Boyko Yaroslav Vasylovych"],
+          "classType": "Practical",
+          "classroom": "10/B",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "8:30 AM - 9:50 AM"
+        },
+        {
+          "lessonNumber": 1,
+          "subgroup": 2,
+          "name": "Server-Side Web Programming",
+          "teacher": ["Husak Oleh Vasylovych"],
+          "classType": "Practical",
+          "classroom": "11/B",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "8:30 AM - 9:50 AM"
+        },
+        {
+          "lessonNumber": 2,
+          "subgroup": 1,
+          "name": "Optoelectronic Informatics",
+          "teacher": ["Korchak Yurii Mykhailovych"],
+          "classType": "Practical",
+          "classroom": "218/T",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "10:10 AM - 11:30 AM"
+        },
+        {
+          "lessonNumber": 2,
+          "subgroup": 2,
+          "name": "Operating Systems",
+          "teacher": ["Boyko Yaroslav Vasylovych"],
+          "classType": "Practical",
+          "classroom": "10/B",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "10:10 AM - 11:30 AM"
+        },
+        {
+          "lessonNumber": 3,
+          "subgroup": 2,
+          "name": "Organization of Databases and Knowledge",
+          "teacher": ["Haliatkin Oleksandr Oleksandrovych"],
+          "classType": "Practical",
+          "classroom": "5/B",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "11:50 AM - 1:10 PM"
+        },
+        {
+          "lessonNumber": 4,
+          "subgroup": 2,
+          "name": "Optoelectronic Informatics",
+          "teacher": ["Rusiniak Mykhailo Omelianovych"],
+          "classType": "Practical",
+          "classroom": "218/T",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "1:30 PM - 2:50 PM"
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "classes": [
+        {
+          "lessonNumber": 1,
+          "subgroup": null,
+          "name": "Ukrainian Language (for Professional Purposes)",
+          "teacher": ["Shchepanska Khrystyna Andriivna"],
+          "classType": "Lecture",
+          "classroom": "1/B",
+          "isOnline": false,
+          "weekType": "Odd",
+          "time": "8:30 AM - 9:50 AM"
+        },
+        {
+          "lessonNumber": 1,
+          "subgroup": null,
+          "name": "Ukrainian Language (for Professional Purposes)",
+          "teacher": ["Shchepanska Khrystyna Andriivna"],
+          "classType": "Practical",
+          "classroom": "1/B",
+          "isOnline": false,
+          "weekType": "Even",
+          "time": "8:30 AM - 9:50 AM"
+        },
+        {
+          "lessonNumber": 2,
+          "subgroup": null,
+          "name": "Server-Side Web Programming",
+          "teacher": ["Chmyhalo Oleksandr Serhiiovych"],
+          "classType": "Lecture",
+          "classroom": "1/B",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "10:10 AM - 11:30 AM"
+        },
+        {
+          "lessonNumber": 3,
+          "subgroup": null,
+          "name": "Fundamentals of National Resistance",
+          "teacher": null,
+          "classType": "Practical",
+          "classroom": "Sports Hall",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "11:50 AM - 1:10 PM"
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "classes": [
+        {
+          "lessonNumber": 1,
+          "subgroup": null,
+          "name": "Organization of Databases and Knowledge",
+          "teacher": ["Husak Oleh Vasylovych"],
+          "classType": "Lecture",
+          "classroom": "1/B",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "8:30 AM - 9:50 AM"
+        },
+        {
+          "lessonNumber": 2,
+          "subgroup": 2,
+          "name": "Operating Systems",
+          "teacher": ["Boyko Yaroslav Vasylovych"],
+          "classType": "Lecture",
+          "classroom": "1/B",
+          "isOnline": false,
+          "weekType": "Weekly",
+          "time": "10:10 AM - 11:30 AM"
+        }
+      ]
+    }
+  ]
+}
