@@ -43,6 +43,18 @@ function formatClass(c) {
   return `${c.lessonNumber}. ${c.time} | ${c.name} (${type}) | ${teachers} | ${room}${sub}`;
 }
 
+function getClassByNumber(data, nArg) {
+  const all = getAllClasses(data);
+  const n = Number(nArg);
+  if (!Number.isInteger(n) || n < 1) {
+    fail(`номер заняття має бути додатним цілим числом, отримано "${nArg}".`);
+  }
+  if (n > all.length) {
+    fail(`заняття з номером ${n} не існує. Допустимі номери: від 1 до ${all.length}.`);
+  }
+  return all[n - 1];
+}
+
 const program = new Command();
 program
   .name('schedule')
@@ -121,6 +133,29 @@ program
       if (list.length === 0) console.log('  занять немає');
       list.forEach((c) => console.log(`  ${formatClass(c)}`));
     }
+  });
+
+
+program
+  .command('list')
+  .description('Показати стислий список усіх занять з номерами')
+  .option('-l, --limit <n>', 'показати лише перші n занять')
+  .action((options) => {
+    let limit = null;
+    if (options.limit !== undefined) {
+      limit = Number(options.limit);
+      if (!Number.isInteger(limit) || limit < 1) {
+        fail(`значення --limit має бути додатним цілим числом, отримано "${options.limit}".`);
+      }
+    }
+
+    const all = getAllClasses(getData());
+    const shown = limit === null ? all : all.slice(0, limit);
+
+    shown.forEach((c, i) => {
+      const sub = c.subgroup ? ` | підгрупа ${c.subgroup}` : '';
+      console.log(`${i + 1}. ${c.day} | пара ${c.lessonNumber} | ${c.name}${sub}`);
+    });
   });
 
 
