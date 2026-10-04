@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/jacobstxt/lab3_schedule_cli/issues"
   },
-  "homepage": "https://github.com/jacobstxt/lab3_schedule_cli#readme"
+  "homepage": "https://github.com/jacobstxt/lab3_schedule_cli#readme",
+  "dependencies": {
+    "commander": "^15.0.0"
+  }
 }
