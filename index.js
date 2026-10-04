@@ -159,5 +159,15 @@ program
   });
 
 
+program
+  .command('show <n>')
+  .description('Показати одне заняття повністю за його номером зі списку (list)')
+  .action((n) => {
+    const c = getClassByNumber(getData(), n);
+    console.log(JSON.stringify(c, null, 2));
+  });
+
+
+
 
 program.parse();
